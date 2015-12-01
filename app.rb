@@ -6,11 +6,6 @@ ActiveRecord::Base.establish_connection(
   :adapter => 'postgresql'
 )
 
-get '/' do
-  @recommendations = Recommendation.all
-  erb :recommendations
-end
-
 get '/api' do
   # select * from recommendations;
   Recommendation.all.to_json
